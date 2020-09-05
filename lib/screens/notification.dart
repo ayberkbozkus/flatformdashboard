@@ -323,86 +323,114 @@ class _NotificationPageState extends State<NotificationPage>
               ],
             ),
           ),
-          SizedBox(
-            height: 50,
-            child: Text(
-              "Bildirimler",
-              style: TextStyle(fontSize: 24),
-            ),
-          ),
-          Card(
-            color: Colors.blue,
-            margin: EdgeInsets.all(5),
-            elevation: 10,
-            child: ListTile(
-              title: Text(
-                "Başlık",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w500,
-                ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
               ),
-              subtitle: Text(
-                "İçerik",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 50,
+                    child: Text(
+                      "Bildirimler",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blue,
+                    margin: EdgeInsets.all(5),
+                    elevation: 10,
+                    child: ListTile(
+                      title: Text(
+                        "Başlık",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(
+                        "İçerik",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blue,
+                    margin: EdgeInsets.all(5),
+                    elevation: 10,
+                    child: ListTile(
+                      title: Text(
+                        "Başlık",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(
+                        "İçerik",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blue,
+                    margin: EdgeInsets.all(5),
+                    elevation: 10,
+                    child: ListTile(
+                      title: Text(
+                        "Başlık",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(
+                        "İçerik",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ),
+                ],
               ),
-              onTap: () {},
-            ),
-          ),
-          Card(
-            color: Colors.blue,
-            margin: EdgeInsets.all(5),
-            elevation: 10,
-            child: ListTile(
-              title: Text(
-                "Başlık",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              subtitle: Text(
-                "İçerik",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onTap: () {},
-            ),
-          ),
-          Card(
-            color: Colors.blue,
-            margin: EdgeInsets.all(5),
-            elevation: 10,
-            child: ListTile(
-              title: Text(
-                "Başlık",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              subtitle: Text(
-                "İçerik",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onTap: () {},
             ),
           ),
         ],

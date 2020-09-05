@@ -96,7 +96,7 @@ class _TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
       child: Column(
         children: <Widget>[
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
             child: Row(
@@ -104,19 +104,38 @@ class _TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 Padding(
                   padding: EdgeInsets.all(10),
                   child: Container(
-                    width: (MediaQuery.of(context).size.width / 2) - 20,
-                    height: 330,
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          "Yardım Bileti Açılma Oranı",
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        Container(
-                          height: 290,
-                          child: piechartdisplay,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
                         ),
                       ],
+                    ),
+                    width: (MediaQuery.of(context).size.width / 2) - 20,
+                    height: 330,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            "Yardım Bileti Açılma Oranı",
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          Container(
+                            height: 270,
+                            child: piechartdisplay,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -124,110 +143,157 @@ class _TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                   padding: EdgeInsets.all(10),
                   child: Container(
                     width: (MediaQuery.of(context).size.width / 2) - 20,
-                    height: 330,
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          "Günlük Yardım Bileti Açılma Miktarı",
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        Container(
-                          height: 290,
-                          child: barchartdisplay,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
                         ),
                       ],
+                    ),
+                    height: 330,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            "Günlük Yardım Bileti Açılma Miktarı",
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          Container(
+                            height: 270,
+                            child: barchartdisplay,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(
-            height: 50,
-            child: Text(
-              "Yardım Biletleri",
-              style: TextStyle(fontSize: 24),
-            ),
-          ),
-          Card(
-            color: Colors.blue,
-            margin: EdgeInsets.all(5),
-            elevation: 10,
-            child: ListTile(
-              title: Text(
-                "Başlık",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w500,
-                ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
               ),
-              subtitle: Text(
-                "İçerik",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 50,
+                    child: Text(
+                      "Yardım Biletleri",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blue,
+                    margin: EdgeInsets.all(5),
+                    elevation: 10,
+                    child: ListTile(
+                      title: Text(
+                        "Başlık",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(
+                        "İçerik",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {
+                        alertDialogshow(context);
+                      },
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blue,
+                    margin: EdgeInsets.all(5),
+                    elevation: 10,
+                    child: ListTile(
+                      title: Text(
+                        "Başlık",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(
+                        "İçerik",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {
+                        alertDialogshow(context);
+                      },
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blue,
+                    margin: EdgeInsets.all(5),
+                    elevation: 10,
+                    child: ListTile(
+                      title: Text(
+                        "Başlık",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(
+                        "İçerik",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {
+                        alertDialogshow(context);
+                      },
+                    ),
+                  ),
+                ],
               ),
-              onTap: () {
-                alertDialogshow(context);
-              },
-            ),
-          ),
-          Card(
-            color: Colors.blue,
-            margin: EdgeInsets.all(5),
-            elevation: 10,
-            child: ListTile(
-              title: Text(
-                "Başlık",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              subtitle: Text(
-                "İçerik",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onTap: () {
-                alertDialogshow(context);
-              },
-            ),
-          ),
-          Card(
-            color: Colors.blue,
-            margin: EdgeInsets.all(5),
-            elevation: 10,
-            child: ListTile(
-              title: Text(
-                "Başlık",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              subtitle: Text(
-                "İçerik",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onTap: () {
-                alertDialogshow(context);
-              },
             ),
           ),
         ],
