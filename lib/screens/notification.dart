@@ -10,6 +10,7 @@ class _NotificationPageState extends State<NotificationPage>
     with TickerProviderStateMixin {
   static var barchartdisplay;
   static var piechartdisplay;
+  String dropdownVar = "Bildirim Kimlere Atılacak";
 
   List<charts.Series<Task, String>> _seriesDonutData;
   _generateDonutData() {
@@ -258,7 +259,7 @@ class _NotificationPageState extends State<NotificationPage>
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 5),
                             child: DropdownButton(
-                              hint: Text("Bildirim Kimlere Atılacak"),
+                              hint: Text(dropdownVar),
                               items: [
                                 DropdownMenuItem(
                                   child: Text("İşçiler"),
@@ -273,7 +274,11 @@ class _NotificationPageState extends State<NotificationPage>
                                   value: "bigdataekip",
                                 )
                               ],
-                              onChanged: (String selected) {},
+                              onChanged: (String selected) {
+                                setState(() {
+                                  dropdownVar = selected;
+                                });
+                              },
                             ),
                           ),
                           Padding(
