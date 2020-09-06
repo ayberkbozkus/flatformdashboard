@@ -230,6 +230,11 @@ class _NotificationPageState extends State<NotificationPage>
                             child: TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Bildirim Konusu',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
                               ),
                               onSaved: (String value) {},
                             ),
@@ -241,6 +246,11 @@ class _NotificationPageState extends State<NotificationPage>
                               maxLines: 3,
                               decoration: const InputDecoration(
                                 labelText: 'Bildirim Mesajı',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
                               ),
                               onSaved: (String value) {},
                             ),
@@ -251,6 +261,11 @@ class _NotificationPageState extends State<NotificationPage>
                             child: TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Bildirim Atılma Zamanı',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
                               ),
                               onSaved: (String value) {},
                             ),
@@ -287,6 +302,11 @@ class _NotificationPageState extends State<NotificationPage>
                             child: TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Bildirim Önem Derecesi',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
                               ),
                               onSaved: (String value) {},
                             ),
@@ -297,6 +317,11 @@ class _NotificationPageState extends State<NotificationPage>
                             child: TextFormField(
                               decoration: const InputDecoration(
                                 labelText: 'Bildirim İçin Not',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
                               ),
                               onSaved: (String value) {},
                             ),
