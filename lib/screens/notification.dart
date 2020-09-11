@@ -1,5 +1,8 @@
+import 'package:flatformDashboard/utils/database_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import '../model/notification.dart';
+
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -11,6 +14,8 @@ class _NotificationPageState extends State<NotificationPage>
   static var barchartdisplay;
   static var piechartdisplay;
   String dropdownVar = "Bildirim Kimlere Atılacak";
+
+  DatabaseHelper dbh1=DatabaseHelper();
 
   List<charts.Series<Task, String>> _seriesDonutData;
   _generateDonutData() {
@@ -94,8 +99,11 @@ class _NotificationPageState extends State<NotificationPage>
     _generateDonutData();
   }
 
+  DatabaseHelper dbh2=DatabaseHelper();
+
   @override
   Widget build(BuildContext context) {
+    
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
@@ -330,7 +338,10 @@ class _NotificationPageState extends State<NotificationPage>
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 5),
                             child: RaisedButton(
-                              onPressed: () {},
+                              onPressed: () {dbh2.notificationsAdd(Notifications("Konu","kime","mesaj",DateTime.now()));
+                              
+                              
+                              },
                               child: Text(
                                 "Gönder",
                                 style: TextStyle(

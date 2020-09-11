@@ -1,4 +1,5 @@
-class Ticket {
+external int get millisecond;
+class Notifications {
   int _id;
   String _issue;
   String _towho;
@@ -27,8 +28,8 @@ class Ticket {
     _time = value;
   }
 
-  Ticket(this._issue,this._towho,this._message,this._time);
-  Ticket.withID(this._id,this._issue,this._towho,this._message,this._time);
+  Notifications(this._issue,this._towho,this._message,this._time);
+  Notifications.withID(this._id,this._issue,this._towho,this._message,this._time);
 
   Map<String, dynamic> toMap(){
     var map =Map <String, dynamic>();
@@ -36,20 +37,23 @@ class Ticket {
     map['issue'] = _issue;
     map['towho'] = _towho;
     map['message'] = _message;
-    map['time'] = _time;
+    map['time'] = _time.millisecondsSinceEpoch;
     return map; 
   }
 
-  Ticket.fromMap(Map<String, dynamic> map){
+    // var militime = DateTime.now().millisecondsSinceEpoch;  // integere dönüştürme
+    // var deneme = DateTime.fromMillisecondsSinceEpoch(militime); // geri çevirme
+
+  Notifications.fromMap(Map<String, dynamic> map){
     this._id = map['id'];
     this._issue = map['issue'];
     this._towho = map['towho'];
     this._message = map['message'];
-    this._time = map['time'];
+    this._time = DateTime.fromMillisecondsSinceEpoch(map['time']);
   }
   @override
   String toString() {
-    return 'Ticket{_id: $_id, _issue: $_issue, _towho: $_towho, _message: $_message, _time: $_time}';
+    return 'Notifications{_id: $_id, _issue: $_issue, _towho: $_towho, _message: $_message, _time: $_time}';
   }
 
 }
